@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Mapping Integraion -->
+        <record id="demo_product_integration" model="my.mapping.config">
+            <field name="name">Products</field>
+            <field name="api_url">https://api.foodics.com/v5/products</field>
+            <field name="odoo_model_id" ref="model_product_template" />
+            <field name="access_token"></field>
+        </record>
+
+        <record id="demo_product_category_integration" model="my.mapping.config">
+            <field name="name">Product Categories</field>
+            <field name="api_url">https://api.foodics.com/v5/categories</field>
+            <field name="odoo_model_id" ref="model_product_category" />
+            <field name="access_token"></field>
+        </record>
+
+        <record id="demo_branch_integration" model="my.mapping.config">
+            <field name="name">Branches</field>
+            <field name="api_url">https://api.foodics.com/v5/branches</field>
+            <field name="odoo_model_id" ref="model_pos_config" />
+            <field name="access_token"></field>
+        </record>
+
+        <record id="demo_payment_methods_integration" model="my.mapping.config">
+            <field name="name">Payment Methods</field>
+            <field name="api_url">https://api.foodics.com/v5/payment_methods</field>
+            <field name="odoo_model_id" ref="model_pos_payment_method" />
+            <field name="access_token"></field>
+        </record>
+        <!-- Mapping Integraion End -->
+
+        <!-- Mapping Integraion line for Product -->
+        <record id="demo_product_id" model="my.mapping.config.line">
+            <field name="name">id</field>
+            <field name="odoo_field_id" ref='field_product_template__f_id' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_name" model="my.mapping.config.line">
+            <field name="name">name</field>
+            <field name="odoo_field_id" ref='product.field_product_template__name' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_business_date" model="my.mapping.config.line">
+            <field name="name">business_date</field>
+            <field name="odoo_field_id" ref='field_product_template__business_date' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_opener" model="my.mapping.config.line">
+            <field name="name">opener</field>
+            <field name="odoo_field_id" ref='field_product_template__opener_id' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_closer" model="my.mapping.config.line">
+            <field name="name">closer</field>
+            <field name="odoo_field_id" ref='field_product_template__closer_id' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_branch" model="my.mapping.config.line">
+            <field name="name">branch</field>
+            <field name="odoo_field_id" ref='field_product_template__branch_id' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_opened_at" model="my.mapping.config.line">
+            <field name="name">opened_at</field>
+            <field name="odoo_field_id" ref='field_product_template__f_opened_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_closed_at" model="my.mapping.config.line">
+            <field name="name">closed_at</field>
+            <field name="odoo_field_id" ref='field_product_template__f_closed_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_created_at" model="my.mapping.config.line">
+            <field name="name">created_at</field>
+            <field name="odoo_field_id" ref='field_product_template__f_created_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_updated_at" model="my.mapping.config.line">
+            <field name="name">updated_at</field>
+            <field name="odoo_field_id" ref='field_product_template__f_updated_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_price" model="my.mapping.config.line">
+            <field name="name">price</field>
+            <field name="odoo_field_id" ref='product.field_product_template__list_price' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_cost" model="my.mapping.config.line">
+            <field name="name">cost</field>
+            <field name="odoo_field_id" ref='product.field_product_template__standard_price' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+        <record id="demo_product_sku" model="my.mapping.config.line">
+            <field name="name">sku</field>
+            <field name="odoo_field_id" ref='product.field_product_template__default_code' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_integration" />
+        </record>
+
+        <!-- Mapping Integraion line for Product -->
+        <record id="demo_product_category_id" model="my.mapping.config.line">
+            <field name="name">id</field>
+            <field name="odoo_field_id" ref='field_product_category__f_id' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_category_integration" />
+        </record>
+        <record id="demo_product_category_name" model="my.mapping.config.line">
+            <field name="name">name</field>
+            <field name="odoo_field_id" ref='product.field_product_category__name' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_category_integration" />
+        </record>
+        <record id="demo_product_category_name_localized" model="my.mapping.config.line">
+            <field name="name">name_localized</field>
+            <field name="odoo_field_id" ref='field_product_category__name_localized' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_category_integration" />
+        </record>
+        <record id="demo_product_category_reference" model="my.mapping.config.line">
+            <field name="name">reference</field>
+            <field name="odoo_field_id" ref='field_product_category__reference' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_category_integration" />
+        </record>
+        <record id="demo_product_category_image" model="my.mapping.config.line">
+            <field name="name">image</field>
+            <field name="odoo_field_id" ref='field_product_category__image' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_category_integration" />
+        </record>
+        <record id="demo_product_category_created_at" model="my.mapping.config.line">
+            <field name="name">created_at</field>
+            <field name="odoo_field_id" ref='field_product_category__f_created_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_category_integration" />
+        </record>
+        <record id="demo_product_category_updated_at" model="my.mapping.config.line">
+            <field name="name">updated_at</field>
+            <field name="odoo_field_id" ref='field_product_category__f_updated_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_category_integration" />
+        </record>
+        <record id="demo_product_category_deleted_at" model="my.mapping.config.line">
+            <field name="name">deleted_at</field>
+            <field name="odoo_field_id" ref='field_product_category__f_deleted_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_product_category_integration" />
+        </record>
+        <record id="demo_product_category_products" model="my.mapping.config.line">
+            <field name="name">products</field>
+            <field name="odoo_field_id" />
+            <field name="odoo_relation_id" ref="model_product_template" />
+            <field name="odoo_relation_name">categ_id</field>
+            <field name="config_id" ref="demo_product_category_integration" />
+        </record>
+
+        <!-- Mapping Integraion line for Product -->
+        <record id="demo_branch_id" model="my.mapping.config.line">
+            <field name="name">id</field>
+            <field name="odoo_field_id" ref='field_pos_config__f_id' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_name" model="my.mapping.config.line">
+            <field name="name">name</field>
+            <field name="odoo_field_id" ref='point_of_sale.field_pos_config__name' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_name_localized" model="my.mapping.config.line">
+            <field name="name">name_localized</field>
+            <field name="odoo_field_id" ref='field_pos_config__name_localized' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_reference" model="my.mapping.config.line">
+            <field name="name">reference</field>
+            <field name="odoo_field_id" ref='field_pos_config__reference' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_latitude" model="my.mapping.config.line">
+            <field name="name">latitude</field>
+            <field name="odoo_field_id" ref='field_pos_config__latitude' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_longitude" model="my.mapping.config.line">
+            <field name="name">longitude</field>
+            <field name="odoo_field_id" ref='field_pos_config__longitude' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_phone" model="my.mapping.config.line">
+            <field name="name">phone</field>
+            <field name="odoo_field_id" ref='field_pos_config__phone' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_opening_from" model="my.mapping.config.line">
+            <field name="name">opening_from</field>
+            <field name="odoo_field_id" ref='field_pos_config__opening_from' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_opening_to" model="my.mapping.config.line">
+            <field name="name">opening_to</field>
+            <field name="odoo_field_id" ref='field_pos_config__opening_to' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_inventory_end_of_day_time" model="my.mapping.config.line">
+            <field name="name">inventory_end_of_day_time</field>
+            <field name="odoo_field_id" ref='field_pos_config__inventory_end_of_day_time' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_receives_online_orders" model="my.mapping.config.line">
+            <field name="name">receives_online_orders</field>
+            <field name="odoo_field_id" ref='field_pos_config__receives_online_orders' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_created_at" model="my.mapping.config.line">
+            <field name="name">created_at</field>
+            <field name="odoo_field_id" ref='field_pos_config__f_created_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_updated_at" model="my.mapping.config.line">
+            <field name="name">updated_at</field>
+            <field name="odoo_field_id" ref='field_pos_config__f_updated_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+        <record id="demo_branch_deleted_at" model="my.mapping.config.line">
+            <field name="name">deleted_at</field>
+            <field name="odoo_field_id" ref='field_pos_config__f_deleted_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_branch_integration" />
+        </record>
+
+        <!-- Mapping Integraion line for Payments -->
+        <record id="demo_payment_methods_id" model="my.mapping.config.line">
+            <field name="name">id</field>
+            <field name="odoo_field_id" ref='field_pos_payment_method__f_id' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+        <record id="demo_payment_methods_name" model="my.mapping.config.line">
+            <field name="name">name</field>
+            <field name="odoo_field_id" ref='point_of_sale.field_pos_payment_method__name' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+        <record id="demo_payment_methods_name_localized" model="my.mapping.config.line">
+            <field name="name">name_localized</field>
+            <field name="odoo_field_id" ref='field_pos_payment_method__name_localized' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+        <record id="demo_payment_methods_code" model="my.mapping.config.line">
+            <field name="name">code</field>
+            <field name="odoo_field_id" ref='field_pos_payment_method__code' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+        <record id="demo_payment_methods_auto_open_drawer" model="my.mapping.config.line">
+            <field name="name">auto_open_drawer</field>
+            <field name="odoo_field_id" ref='field_pos_payment_method__auto_open_drawer' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+        <record id="demo_payment_methods_type" model="my.mapping.config.line">
+            <field name="name">type</field>
+            <field name="odoo_field_id" ref='field_pos_payment_method__f_type' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+        <record id="demo_payment_methods_is_active" model="my.mapping.config.line">
+            <field name="name">is_active</field>
+            <field name="odoo_field_id" ref='field_pos_payment_method__is_active' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+        <record id="demo_payment_methods_created_at" model="my.mapping.config.line">
+            <field name="name">created_at</field>
+            <field name="odoo_field_id" ref='field_pos_payment_method__f_created_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+        <record id="demo_payment_methods_updated_at" model="my.mapping.config.line">
+            <field name="name">updated_at</field>
+            <field name="odoo_field_id" ref='field_pos_payment_method__f_updated_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+        <record id="demo_payment_methods_deleted_at" model="my.mapping.config.line">
+            <field name="name">deleted_at</field>
+            <field name="odoo_field_id" ref='field_pos_payment_method__f_deleted_at' />
+            <field name="odoo_relation_id" ></field>
+            <field name="odoo_relation_name"></field>
+            <field name="config_id" ref="demo_payment_methods_integration" />
+        </record>
+    </data>
+</odoo>

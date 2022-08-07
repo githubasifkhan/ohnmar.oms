@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pos_config_form_view" model="ir.ui.view">
+            <field name="name">pos.config.form.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <h2 name="order" position="before">
+                  <h2 name="foodics_info">Foodics Info</h2>
+                    <div class="row mt16 o_settings_container">
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="f_id"/>
+                          <field name="f_id"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="name_localized"/>
+                          <field name="name_localized"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="reference"/>
+                            <field name="reference"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="latitude"/>
+                          <field name="latitude"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="longitude"/>
+                          <field name="longitude"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="phone"/>
+                          <field name="phone"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="opening_from"/>
+                          <field name="opening_from"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="opening_to"/>
+                          <field name="opening_to"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="inventory_end_of_day_time"/>
+                          <field name="inventory_end_of_day_time"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="receives_online_orders"/>
+                          <field name="receives_online_orders"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="f_created_at"/>
+                          <field name="f_created_at"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="f_updated_at"/>
+                          <field name="f_updated_at"/>
+                        </div>
+                      </div>
+                      <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                          <label for="f_deleted_at"/>
+                          <field name="f_deleted_at"/>
+                        </div>
+                      </div>
+                    </div>
+                </h2>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_category_property_form" model="ir.ui.view">
+            <field name="name">product.category.property.form.inherit</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <group name="first" position="after">
+                    <group string="Foodics Fields" >
+                        <group>
+                            <field name="name_localized"/>
+                            <field name="f_id"/>
+                            <field name="reference"/>
+                        </group>
+                        <group>
+                            <field name="image"/>
+                            <field name="f_created_at"/>
+                            <field name="f_updated_at"/>
+                            <field name="f_deleted_at"/>
+                        </group>
+                    </group>
+                </group>
+            </field>
+        </record>
+    </data>
+</odoo>

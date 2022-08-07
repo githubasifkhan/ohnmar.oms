@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_my_mapping_config,my_mapping_config,model_my_mapping_config,base.group_user,1,1,1,1
+access_my_mapping_config_line,my_mapping_config_line,model_my_mapping_config_line,base.group_user,1,1,1,1

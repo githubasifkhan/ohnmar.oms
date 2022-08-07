@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem name="Foodics Integration" id="f_menu_root" />
+
+        <record id="integration_view_form" model="ir.ui.view">
+            <field name="name">integration.form</field>
+            <field name="model">my.mapping.config</field>
+            <field name="arch" type="xml">
+                <form string="Integration">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="api_url" />
+                            <field name="odoo_model_id" />
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="line_ids"/>
+                            </page>
+                            <page string="Setting">
+                              <group>
+                                <!-- <field name="cron_id" /> -->
+                                <field name="access_token" invisible="True" />
+                              </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_integration" model="ir.actions.act_window">
+            <field name="name">Foodics Integration</field>
+            <field name="res_model">my.mapping.config</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <record id="integration_line_view_tree" model="ir.ui.view">
+            <field name="name">integration.line.tree</field>
+            <field name="model">my.mapping.config.line</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="config_id" invisible="1"/>
+                    <field name="name" />
+                    <field name="odoo_field_id" />
+                    <field name="odoo_relation_id"/>
+                    <field name="odoo_relation_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Top menu item -->
+
+        <!-- <menuitem name="Mapping Config" id="menu_mapping_config" parent_id='f_menu_root' action="action_integration"/> -->
+
+        <menuitem name="Mapping Config" id="menu_mapping_config" parent='f_menu_root' action="action_integration"/>
+
+
+
+        <!-- <record id="mt_isy_hr_contract_view_form_studio_inherit1" model="ir.ui.view">
+            <field name="name">HR Contract Studio Inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="studio_customization.odoo_studio_hr_contr_976839b4-672d-468c-a12a-2cd7b805ba09"/>
+            <field name="arch" type="xml">
+                <field name="x_studio_overseas_bank" position="after">
+                    <field name="usd_cash" />
+                </field>
+            </field>
+        </record> -->
+    </data>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_pos_payment_method_form" model="ir.ui.view">
+            <field name="name">pos.payment.method.form.inherit</field>
+            <field name="model">pos.payment.method</field>
+            <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_form"/>
+            <field name="arch" type="xml">
+                <group name="Payment methods" position="after">
+                    <group string="Foodics Info" >
+                        <group>
+                            <field name="f_id"/>
+                            <field name="name_localized"/>
+                            <field name="code"/>
+                            <field name="auto_open_drawer"/>
+                            <field name="f_type"/>
+                            <field name="is_active"/>
+                            <field name="f_created_at"/>
+                            <field name="f_updated_at"/>
+                            <field name="f_deleted_at"/>
+                        </group>
+                    </group>
+                </group>
+            </field>
+        </record>
+    </data>
+</odoo>

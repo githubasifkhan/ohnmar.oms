@@ -1,0 +1,47 @@
+<odoo noupdate="0">
+    <record id="product_scheduler_integration" model="ir.cron">
+        <field name="name">Integration Scheduler Products</field>
+        <field eval="True" name="active" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_my_mapping_config" />
+        <field name="state">code</field>
+        <field name="code">model.action_integration('product.template')</field>
+    </record>
+    <record id="product_category_scheduler_integration" model="ir.cron">
+        <field name="name">Integration Scheduler Product Categories</field>
+        <field eval="True" name="active" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_my_mapping_config" />
+        <field name="state">code</field>
+        <field name="code">model.action_integration('product.category')</field>
+    </record>
+    <record id="branch_scheduler_integration" model="ir.cron">
+        <field name="name">Integration Scheduler Branches</field>
+        <field eval="True" name="active" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_my_mapping_config" />
+        <field name="state">code</field>
+        <field name="code">model.action_integration('pos.config')</field>
+    </record>
+    <record id="payment_method_scheduler_integration" model="ir.cron">
+        <field name="name">Integration Scheduler Payment Methods</field>
+        <field eval="True" name="active" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_my_mapping_config" />
+        <field name="state">code</field>
+        <field name="code">model.action_integration('pos.payment.method')</field>
+    </record>
+
+</odoo>

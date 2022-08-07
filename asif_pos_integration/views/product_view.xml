@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_form_view" model="ir.ui.view">
+            <field name="name">product.template.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="priority">5</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <page name="invoicing" position="after">
+                    <page string="Foodics Infos" name="foodics_infos" >
+                        <group>
+                            <group>
+                                <field name="f_id"/>
+                                <field name="business_date"/>
+                                <field name="opener_id"/>
+                                <field name="closer_id"/>
+                                <field name="branch_id"/>
+                            </group>
+                            <group>
+                                <field name="f_opened_at"/>
+                                <field name="f_created_at"/>
+                                <field name="f_updated_at"/>
+                                <field name="f_deleted_at"/>
+                            </group>
+                        </group>
+                        
+                    </page>
+                </page>
+            </field>
+        </record>
+    </data>
+</odoo>
